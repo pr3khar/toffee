@@ -10,7 +10,7 @@ def process_message(message):
     amount = list_message[0]
     if(len(list_message)==1):
         if(amount.isnumeric()):
-            return [int(amount), 'Misc']
+            return [int(amount), 'Miscellaneous']
         else:
             return[-1, "Not_A_Number"]
     

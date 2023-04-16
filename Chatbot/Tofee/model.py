@@ -11,9 +11,9 @@ def classify_text(text):
         category = results['labels'][0]
 
     elif results['scores'][0] >= 0.65 and results['scores'][1] >= 0.65 and results['scores'][2] >= 0.65:
-        category = "miscellaneous"
+        category = "Miscellaneous"
     elif all(x <= 0.2 for x in results['scores']):
-        category = "miscellaneous"
+        category = "Miscellaneous"
     
     return category
 
