@@ -24,7 +24,7 @@ userCollection = db["users"]
 transactionCollection = db["transactions"]
 ids=[]
 chatidsss=[]
-isHindi = True
+isHindi = False
 
 def start_command(update, context):
     user_id = update.message.from_user.id
@@ -119,6 +119,7 @@ def english(update, context):
     isHindi = False
 
 def hindi(update, context):
+    print("Changed")
     isHindi = True
 
 if __name__== '__main__':
@@ -129,6 +130,8 @@ if __name__== '__main__':
     # Commands
     dp.add_handler(CommandHandler('start', start_command))
     dp.add_handler(CommandHandler('help', help_command))
+    dp.add_handler(CommandHandler('english', english))
+    dp.add_handler(CommandHandler('hindi', hindi))
 
     # Messages
     dp.add_handler(MessageHandler(Filters.text, handle_messages))
